@@ -19,6 +19,11 @@ client.on('message', message => {
        message.reply('pong');
 
        }
+    if (message.content === 'test') {
+
+       message.channel.send(new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"}));
+
+       }
 
 });
 
