@@ -24,7 +24,13 @@ client.on('message', message => {
        message.channel.send(new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"}));
 
        }
-    
+    if (message.content === '!time') {
+     setInterval(function(){
+    { if(new Date().getMinutes == 03) 
+        message.channel.send(new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"}));
+    }
+}, 60000)
+
 
 });
 
