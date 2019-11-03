@@ -16,7 +16,7 @@ client.on('message', message => {
 
     if (message.content === 'ping') {
 
-       message.reply('pongo');
+       message.reply(new Date().getMinutes());
 
        }
     if (message.content === 'test') {
@@ -24,6 +24,7 @@ client.on('message', message => {
        message.channel.send(new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"}));
 
        }
+    
 
 });
 
