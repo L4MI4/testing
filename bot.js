@@ -16,7 +16,7 @@ client.on('message', message => {
 
     if (message.content === 'ping') {
 
-       message.reply("pong");
+       message.reply(new Date().getMinutes());
 
        }
     if (message.content === 'test') {
@@ -26,11 +26,11 @@ client.on('message', message => {
        }
     if (message.content === '!time') {
      setInterval(function(){
-    { if(new Date().getMinutes == 14) 
+     if(new Date().getMinutes() == 38) 
         message.channel.send(new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"}));
     }
 }, 60000)
-    }
+    
 
 
 });
