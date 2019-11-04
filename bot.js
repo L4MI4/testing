@@ -43,11 +43,15 @@ function leftToFiftyFive(){
       }
       break;
   }
-
-
-
 });
+client.on('message', message => {
 
+    if (message.content === 'ping') {
+
+       message.reply(new Date().getMinutes());
+
+       }
+ });
  
 
 // THIS  MUST  BE  THIS  WAY
