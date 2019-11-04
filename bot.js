@@ -27,7 +27,7 @@ client.on('ready', () => {
 function leftToFiftyFive(){
     var d = new Date();
     var d2= -d + d.setMinutes(55,0,0);
-    if(d2 <=0) d2= d2+ d.setHours(24,0,0,0);
+    if(d2 <=0) d2= d2+ d.setMinutes(60,0,0);
     return d2;	
 }
            }
