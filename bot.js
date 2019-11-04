@@ -18,7 +18,7 @@ client.on('ready', () => {
       sec = 10;
   switch (command) {
     case "startloop":
-      if (message.channel.loop) return message.channel.send ('loop is already started');
+      if (message.channel.timeout) return message.channel.send ('loop is already started');
       else { message.channel.send('Loop started, will inform you every hour now.Use []stoploop to stop the loop');
             message.channel.timeout=setTimeout(function(){ // in leftToFiftyFive() milliseconds run this:
        message.channel.loop = setInterval (() => message.channel.send (new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"})), sec * 1000)
@@ -33,7 +33,7 @@ function leftToFiftyFive(){
            }
       break;
     case "stoploop":
-      if (!message.channel.loop) return message.channel.send ('no loop to stop lol');
+      if (!message.channel.timeout) return message.channel.send ('no loop to stop lol');
       else {
        message.channel.send('Loop stopping..');
         clearInterval (message.channel.loop);
