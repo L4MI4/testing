@@ -10,26 +10,7 @@ client.on('ready', () => {
 
 });
 
- 
 
-client.on('message', message => {
-
-    if (message.content === 'ping') {
-
-       message.reply(new Date().getMinutes());
-
-       }
-    if (message.content === 'test') {
-
-       message.channel.send(new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"}));
-
-       }
- if (message.content === '!time') {
-     setInterval(function(){
-     if(new Date().getMinutes() == 43) 
-        {message.channel.send(new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"}));
-    }
-}, 60000)}
     
  client.on ('message', async message => {
   var prefix = "=",
