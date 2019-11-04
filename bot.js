@@ -35,6 +35,7 @@ function leftToFiftyFive(){
     case "stoploop":
       if (!message.channel.loop) return message.channel.send ('no loop to stop lol');
       else {
+       message.channel.send('Loop stopping..');
         clearInterval (message.channel.loop);
         clearTimeout(message.channel.timeout);
         message.channel.timeout= false;
