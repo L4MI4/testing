@@ -24,7 +24,7 @@ client.on('ready', () => {
             message.channel.timeout=setTimeout(function(){ // in leftToFiftyFive() milliseconds run this:
             message.channel.send(new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"}));
        message.channel.loop = setInterval (() => message.channel.send (new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"})), sec * 1000)
-    }, t1)
+    }, leftToFiftyFive())
             
 function leftToFiftyFive(){
     var d = new Date();
