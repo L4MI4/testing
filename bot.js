@@ -15,16 +15,29 @@ client.on('ready', () => {
  client.on ('message', async message => {
   var prefix = "=",
       command = message.content.slice (prefix.length).split (" ")[0],
-      sec = 5;
+      sec = 10;
   switch (command) {
     case "startloop":
       if (message.channel.loop) return message.channel.send ('loop is already started');
-      else message.channel.loop = setInterval (() => message.channel.send ('ddd'), sec * 1000);
+      else { message.channel.send('Loop started, will inform you every hour now.Use []stoploop to stop the loop');
+            message.channel.timeout=setTimeout(function(){ // in leftToFiftyFive() milliseconds run this:
+       message.channel.loop = setInterval (() => message.channel.send (new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"})), sec * 1000)
+    }, leftToFiftyFive())
+            
+function leftToFiftyFive(){
+    var d = new Date();
+    var d2= -d + d.setMinutes(55,0,0);
+    if(d2 <=0) d2= d2+ d.setHours(24,0,0,0);
+    return d2;	
+}
+           }
       break;
     case "stoploop":
       if (!message.channel.loop) return message.channel.send ('no loop to stop lol');
       else {
         clearInterval (message.channel.loop);
+        clearTimeout(message.channel.timeout);
+        message.channel.timeout= false;
         message.channel.loop = false;
       }
       break;
