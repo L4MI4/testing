@@ -38,8 +38,8 @@ function leftToFiftyFive(){
        message.channel.send('Loop stopping..');
         clearInterval (message.channel.loop);
         clearTimeout(message.channel.timeout);
-        message.channel.timeout= false;
         message.channel.loop = false;
+       message.channel.timeout= false;
       }
       break;
   }
