@@ -18,7 +18,6 @@ client.on('ready', () => {
       sec = 10;
   switch (command) {
     case "startloop":
-      var t1= leftToFiftyTive();
       if (message.channel.timeout) return message.channel.send ('loop is already started, informing you in minutes');
       else { message.channel.send('Loop started, will inform you every hour now starting in minutes.Use []stoploop to stop the loop');
             message.channel.timeout=setTimeout(function(){ // in leftToFiftyFive() milliseconds run this:
