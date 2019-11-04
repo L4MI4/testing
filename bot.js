@@ -13,6 +13,7 @@ client.on('ready', () => {
 
     
  client.on ('message', async message => {
+  if(message.content.startsWith('!')){
   var prefix = "!",
       command = message.content.slice (prefix.length).split (" ")[0],
       sec = 10;
@@ -44,6 +45,7 @@ function leftToFiftyFive(){
       }
       break;
   }
+ }
 });
 client.on('message', message => {
 
