@@ -13,16 +13,16 @@ client.on('ready', () => {
 
     
  client.on ('message', async message => {
-  var prefix = "=",
+  var prefix = "!",
       command = message.content.slice (prefix.length).split (" ")[0],
       sec = 10;
   switch (command) {
     case "startloop":
-      if (message.channel.timeout) return message.channel.send ('loop is already started, use []stoploop to stop the loop');
-      else { message.channel.send('Loop started, will inform you every hour now starting in '+ (Math.round(leftToFiftyFive()/60000))+ ' minutes.Use []stoploop to stop the loop');
+      if (message.channel.timeout) return message.channel.send ('loop is already started, use []stoploop to stop the loop.');
+      else { message.channel.send('Loop started, will inform you every hour now starting in '+ (Math.round(leftToFiftyFive()/60000))+ ' minutes.Use []stoploop to stop the loop.');
             message.channel.timeout=setTimeout(function(){ // in leftToFiftyFive() milliseconds run this:
-            message.channel.send(new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"}));
-       message.channel.loop = setInterval (() => message.channel.send (new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"})), sec * 1000)
+            message.channel.send('Current Time in Tokyo: '+new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"}));
+       message.channel.loop = setInterval (() => message.channel.send ('Current Time in Tokyo '+ new Date().toLocaleTimeString("jp-JP",{timeZone:"Asia/Tokyo"})), sec * 1000)
     }, leftToFiftyFive())
             
 function leftToFiftyFive(){
